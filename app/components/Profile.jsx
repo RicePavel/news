@@ -4,10 +4,20 @@ import {BrowserRouter as Router, Redirect, Route, Link, Switch} from "react-rout
 class Profile extends React.Component {
     
     render() {
-        return (
+        
+        var redirect = false;
+        if (localStorage.getItem('auth') !== 'true') {
+            redirect = true;
+        }
+        
+        if (redirect) {
+            return <Redirect to='/login'/>;
+        } else {
+            return (
                 <div>
                     <div>Профиль</div>
                 </div>);
+        }
     }
     
 }
