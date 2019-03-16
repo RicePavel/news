@@ -8,6 +8,7 @@ import {Main} from "./Main.jsx";
 import {News} from "./News.jsx";
 import {NotFound} from "./NotFound.jsx";
 import {Profile} from "./Profile.jsx";
+import {connect} from 'react-redux';
 
 class App extends React.Component {
     
@@ -22,7 +23,7 @@ class App extends React.Component {
     render() {
         return (<Router>
                 <div>
-                    <Menu/>
+                    <Menu auth={this.props.auth} />
                     <Switch>
                         <Route exact path="/" component={Main}/>
                         <Route path="/profile" component={Profile} />
@@ -36,4 +37,12 @@ class App extends React.Component {
     
 }
 
-export {App};
+const mapStateToProps = function(store) {
+    return {
+        auth: store.auth
+    };
+}
+
+
+export default connect(mapStateToProps)(App);
+

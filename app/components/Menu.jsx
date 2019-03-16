@@ -5,13 +5,13 @@ import {Link} from "react-router-dom";
 class Menu extends React.Component {
     
     logout() {
-        localStorage.removeItem('auth');
+        
     }
     
     render() {
         
         var logoutLink = '';
-        if (localStorage.getItem('auth') === 'true') {
+        if (this.props.auth === true) {
             logoutLink = <a onClick={this.logout} href='#'>Выйти</a>;
         }
         
