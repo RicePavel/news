@@ -15,19 +15,6 @@ class Menu extends React.Component {
                 );
     }
     
-    /*
-    render() {
-        return (
-                <div>
-                    <a href="#">Главная</a>
-                    <a href="#">Профиль</a>
-                    <a href="#">Новости</a>
-                    <a href="#">Логин</a>
-                </div>
-                );
-    }
-    */
-    
 }
 
 export {Menu};
