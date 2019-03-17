@@ -3,6 +3,8 @@ var React = require("react");
 import {Link} from "react-router-dom";
 import {store} from "../reducer.jsx";
 
+import styles from "../styles.js";
+
 class Menu extends React.Component {
     
     logout() {
@@ -13,14 +15,14 @@ class Menu extends React.Component {
         
         var logoutLink = '';
         if (this.props.auth === true) {
-            logoutLink = <a onClick={this.logout} href='#'>Выйти</a>;
+            logoutLink = <a style={styles.navLink} onClick={this.logout} href='#'>Выйти</a>;
         }
         
         return (
                 <div>
-                    <Link to="/">На главную</Link>
-                    <Link to="/news">Новости</Link>
-                    <Link to="/profile">Профиль</Link>
+                    <Link style={styles.navLink} to="/">На главную</Link>
+                    <Link style={styles.navLink} to="/news">Новости</Link>
+                    <Link style={styles.navLink} to="/profile">Профиль</Link>
                     {logoutLink}
                 </div>
                 );

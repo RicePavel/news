@@ -36,7 +36,7 @@ class Login extends React.Component {
             return <Redirect to='/profile'/>;
         } else {
             return (<div>
-                        <div>Логин</div>
+                        <h3>Логин</h3>
                         {errorMessage}
                         <form onSubmit={this.submitLogin} >
                             <p>Логин: <input ref='login' type='text' name='login' /></p>

@@ -27,7 +27,7 @@ class News extends React.Component {
         });
         
         return (<div>
-                    <div>Новости</div>
+                    <h3>Новости</h3>
                     {list}
                 </div>);
     }

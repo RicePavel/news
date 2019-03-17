@@ -10,7 +10,7 @@ class Profile extends React.Component {
         } else {
             return (
                 <div>
-                    <div>Профиль</div>
+                    <h3>Профиль</h3>
                 </div>);
         }
     }
