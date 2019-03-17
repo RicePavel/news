@@ -7,10 +7,11 @@ import {createStore} from 'redux';
 var reducer = function(state = Map(), action) {
     switch (action.type) {
         case 'LOGIN':
-            return state.update('auth', true);
+            state = state.set('auth', true);
+            return state;
             break;
         case 'LOGOUT':
-            return state.update('auth', false);
+            return state.set('auth', false);
             break;
     }
     return state;

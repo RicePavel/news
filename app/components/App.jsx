@@ -26,9 +26,9 @@ class App extends React.Component {
                     <Menu auth={this.props.auth} />
                     <Switch>
                         <Route exact path="/" component={Main}/>
-                        <Route path="/profile" component={Profile} />
+                        <Route path="/profile" render={(props) => <Profile auth={this.props.auth} />} />
                         <Route path="/news" render={(props) => <News {...props} news={this.state.news} />} />
-                        <Route path="/login" component={Login} />
+                        <Route path="/login" render={(props) => <Login auth={this.props.auth} />} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>
@@ -37,9 +37,9 @@ class App extends React.Component {
     
 }
 
-const mapStateToProps = function(store) {
+const mapStateToProps = function(state) {
     return {
-        auth: store.auth
+        auth: state.get('auth')
     };
 }
 

@@ -1,11 +1,12 @@
 var React = require("react");
 
 import {Link} from "react-router-dom";
+import {store} from "../reducer.jsx";
 
 class Menu extends React.Component {
     
     logout() {
-        
+        store.dispatch({type: 'LOGOUT'});
     }
     
     render() {

@@ -5,13 +5,8 @@ class Profile extends React.Component {
     
     render() {
         
-        var redirect = false;
-        if (localStorage.getItem('auth') !== 'true') {
-            redirect = true;
-        }
-        
-        if (redirect) {
-            return <Redirect to='/login'/>;
+        if (this.props.auth !== true) {
+            return <Redirect to='/login'/>;     
         } else {
             return (
                 <div>

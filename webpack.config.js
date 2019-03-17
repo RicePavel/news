@@ -1,11 +1,13 @@
 var path = require("path");
 
 module.exports = {
+    devtool: 'eval',
     entry: "./app/app.jsx",
     output: {
         path: path.resolve(__dirname, './public'),
         publicPath: '/public/',
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        sourceMapFilename: 'source.js.map'
     },
     module: {
         rules: [
