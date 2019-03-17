@@ -1,10 +1,24 @@
 var React = require("react");
 
+import * as $ from 'jquery';
+
 class News extends React.Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {news: []};
+    }
+    
+    componentDidMount()  {
+        const self = this;
+        $.get('news.json', function(response) {
+            self.setState({news: response.news});
+        });
+    }
     
     render() {
         
-        const list = this.props.news.map((el, index) => {
+        const list = this.state.news.map((el, index) => {
             return (
             <div key={index} >
                 <h3>{el[0]}</h3>
